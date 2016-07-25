@@ -1,22 +1,25 @@
-variables
+Manual simple javascript es6
+==================================
 
-variables de bloque
+# variables
+
+### variables de bloque
 
 las variables de bloque funcionan por medio del bloque (alcanse de la variable)
 
-declaración let
+### declaración let
 
 funciona por medio de un bloque simplemente una separación por medio de corchetes (simple corchetes o cualquier expresión que los tenga) ya que estos crean el ámbito en el cual se
 va a utilizar y solo existe en ese bloque
 cuando no podemos alcanzar una variable del tipo var aparece como indefinida cuando no podemos alcanzar una variable tipo let aparece un un error de referencia.
-
-var varibaleGlobal = 5;
-{
- let variableDeBloque = 3;
-
-}
-
-const
+``` [javascript]
+    var varibaleGlobal = 5;
+    {
+     let variableDeBloque = 3;
+    
+    }
+``` 
+### const
 
 en si no es una variable es una constante su sintaxis es muy parecida
 a las constantes en c++ ( bueno solo tiene la misma palabra reservada)
@@ -24,12 +27,12 @@ a las constantes en c++ ( bueno solo tiene la misma palabra reservada)
 las constantes son variables que su valor  no cambia, en si no tiene restricción en el valor si no la asignación, por ejemplo en objetos u arrays usted puede cambiarle valores pero
 no el tipo.
 
-operador spread/rest
+### operador spread/rest
 
 ahora e6 produce un operador llamador spreak o rest dependiendo de donde se va ha utilizar, este operador consiste en tres punto seguidos antes de la variable que se quiera utilizar,
 este consiste en dividir o agrupar valores ya sea dividir los valores de un array o agrupar los valores que sobran como parámetros en una función convirtiéndolos en un array.
 
-variables destructuradas
+### variables destructuradas
 
 ahora cada vez que creamos objetos o varibles y las igualamos a un objeto estas toman el
 valor de la variable que tenga el mismo nombre ahorandonos escribir un par de lineas,
@@ -57,7 +60,7 @@ debemos recorrer el vector desde la pocicion siguiente del o los  parámetros co
 ahora se utiliza un vector llamado numbers la cual es definida como un parametro con tres
 puntos antes (...numbers)
 
-propiedad name
+### propiedad name
 
 ahora se puede llamar la propiedad llamada name la cual retorna una cadena con la cual
 es el nombre de la función o de la propiedad en la cual se utilice, en algunos casos retorna
@@ -69,7 +72,7 @@ funciones inmediatamente invocadas
 las funciones invocadas de inmediato son funciones anónimas que son inmediatamente invocadas
 mientras son pasadas a una variable, esto hace que quede inicializado como un objeto 
 
-funciones de dirección =>
+### funciones de dirección =>
 
 las funciones de flecha son funciones aunque nos e comportan de la misma forma
 
