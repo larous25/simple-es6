@@ -1,9 +1,12 @@
 Manual de javascript es6
 
-este manual no pretende ser una guia definitiva solo una guia para lectura rapida
-mostrando de la forma mas simple posible lo que trae el nuevo estandar de javascript
-si conoce  el tema o si esta aprendiendo y tiene notas que compartir no dude en colaborar
-si ve alguna falta de ortografia porfavor sientase libre de corregirla (yo soy pesimo con ortografia)
-este manual nace siendo notas viejas de evernote, pero quiero compartirlas y asi aprender mucho más.
+Este manual no pretende ser una guía definitiva solo una referencia  rápida
+mostrando de la forma mas simple posible lo que trae el nuevo estándar de javascript
+si conoce  el tema o si esta aprendiendo y tiene notas que compartir no dude en colaborar (porfavor en el braso borrador)
+si ve alguna falta de ortografía por favor siéntase libre de corregirla (yo soy pésimo con ortografía)
+este manual nace siendo notas viejas de evernote, pero quiero compartirlas y así aprender mucho más.
 
-poco a poco ire agregando más.
+
+
+autor:
+brian bustos (larous25@hotmail.es)
