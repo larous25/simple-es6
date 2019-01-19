@@ -33,47 +33,60 @@ let variableDeBloque = 3;
 Su sintaxis es muy parecida las constantes en c++ (bueno solo tiene la misma palabra reservada)
 Las constantes son variables que su valor no cambia, en si no tiene restricción en el valor si no la asignación, por ejemplo en objetos o vectores usted puede cambiarle valores internos pero no el tipo con el que fue declarado.
 
+``` javascript
+const cinco = 5;
+cinco = 4;
+// Error
+
+```
+
 ### operador propagacion (spread/rest)
 
-ahora e6 produce un operador llamado propagación, este operador consiste en tres punto seguidos antes de la variable que se quiera utilizar,
-este consiste dependiendo de donde se va ha utilizar en separar o agrupar valores, ya sea separar los valores de un vector o de forma inversa, agrupar parámetros ingresados en una función y convertirlos en un vector.
+ahora `ES6` ahora tiene un operador llamado `propagación`, este operador consiste en tres punto seguidos antes de la variable que se quiera utilizar, este operador puede separar o agrupar valores, ya sea separar los valores de un vector o de forma inversa, agrupar parámetros ingresados en una función y convertirlos en un vector e incuso unir vectores.
 
 ``` javascript
 
+/* 
+    en esta funcion vemos como agrupa los valores en un unico parametro
+*/
 function sumaLoQueSeEnvie(...parametros){
-let temp = 0;
-console.log(parametros);
-parametros.forEach((e) => {
-temp += e;
-});
-return temp;
+    let temp = 0;
+    console.log(parametros);
+    // [1,2,3,4] 
+    parametros.forEach((e) => {
+        temp += e;
+    });
+    return temp;
 }
-sumaLoQueSeEnvie(1,2,3,4);
+// se
+let resultado = sumaLoQueSeEnvie(1,2,3,4);
+console.log(resultado)
 // 10
 
 ```
 
 ### variables destructuradas
 
-El destructurado funciona separando valores de un vector o un objeto siendo posible guardarlos variables separadas ahorrándonos escribir varias líneas de código,
+El destructurado funciona separando propiedades o valores de un vector o un objeto siendo posible guardarlos variables separadas ahorrándonos escribir varias líneas de código,
 suena similar al operador de tres puntos pero funcionan diferente, su sintaxis se utiliza al momento de la declaración de una o varias variables,
 si queremos destructurar un objeto envolvemos nuestras variables con llaves {} y queremos destructurar un array las envolvemos
 entre corchetes []
+
 ``` javascript
 
 var evas = {
-eva00:'rei',
-eva01:'shinji',
-eva02:'asuka'
+    eva00:'rei',
+    eva01:'shinji',
+    eva02:'asuka'
 };
 
-var {eva00,eva01,eva02} = evas;
+var { eva00,eva01,eva02 } = evas;
 
 console.log(eva00);
 
 var pilotos = ['rei','shinji','asuka'];
 
-var [eva00,eva01,eva02] = pilotos;
+var [ eva00,eva01,eva02 ] = pilotos;
 
 console.log(eva00);
 
@@ -85,17 +98,20 @@ en casos especiales si un valor esperado no es retornado por el objeto podemos d
 y por ultimo también podemos utilizar la restructuración cuando estamos definiendo parámetros de funciones e incluso darle valores por defecto. 
 
 ``` javascript
-
-function cuenta({carne,pollo=3}){
-return carne+pollo;
+// esta funcion destructura las propiedades del objeto 
+// tambien iguala una de ellas con un valor por defecto a 3
+function cuenta({ carne, pollo = 3 }){
+    return carne+pollo;
 }
 
 var empanadas = {
-carne: 10,
-pollo:5
+    carne: 10,
+    pollo:5
 };
 
 cuenta(empanadas);
+// 15 empanaditas
+
 ```
 
 # funciones
@@ -106,9 +122,9 @@ Las funciones de flecha tiene una sintaxis mucho mas simple y no se comportan de
 ya que no tiene un constructor no es posible utilizarla como una clase e instanciar la con el operador *new*, si utilizamos esto lanzara un error al momento de ejecutar nuestro código.
 es exclusivamente una función anónima, no tiene un valor *this* propio y no es compatible con *arguments* ( la solución a este problema es utilizar el operador de propagación).
 
-Su sintaxis
+##### Su sintaxis
 
-si se utiliza con solo un parámetro no son necesarios los paréntesis de lo contrario son obligatorios,
+Si se utiliza con solo un parámetro no son necesarios los paréntesis de lo contrario son obligatorios,
 las llaves y la palabra clave *return* son opcionales, solo se utilizan si se tiene mas de una expresión,
 si solo tenemos una y queremos retornar un objeto literal lo envolveremos entre paracentesis de lo contrario habrá un conflicto
 con las llaves de la función.
@@ -122,24 +138,24 @@ saludo('paul')
 
 ### funciones de nivel de bloque
 
-las funciones de nivel de bloque se utilizan de forma estricta aunque no es obligatorio, 
+Las funciones de nivel de bloque se utilizan de forma estricta aunque no es obligatorio, 
 su comportamiento cambia si no se utilizan de esta forma, siempre que no este igualada a una variable
 vienen siendo similares a las funciones auto ejecutables (alcance de la variable)
 ``` javascript
 {
-function efimero(){
-}
+    function efimero(){
+    }
 }
 ```
 ### valores de parámetros por defecto
 
-ahora en las funciones se pueden asignar valores por defecto a los parámetros, así cuando falta un parámetro
+Ahora en las funciones se pueden asignar valores por defecto a los parámetros, así cuando falta un parámetro
 queda por defecto con el valor dado
 
 ``` javascript
 
 function a(b = 3, d =5){
-return a + d;
+    return a + d;
 }
 
 a(); // 8
@@ -168,7 +184,7 @@ falta
 
 ### objetos literales
 
-en ocasiones cuando queremos crear objetos literales utilizamos variables con el mismo nombre
+En ocasiones cuando queremos crear objetos literales utilizamos variables con el mismo nombre
 de la propiedad del objeto esto se llama duplicidad, en e6 se a eliminado y se puede crear
 de forma directa solo separando el nombre de la propiedad con comas, ya que en e6 cuando
 una propiedad de un objeto literal no tiene valor el motor de e6 busca en el bloque
@@ -184,12 +200,12 @@ también las funciones en objetos literales no es necesario utilizar la palabra 
 
 #### setter/getter
 
-son un par de funciones para obtener y retornar un valor que funcionan con las palabras reservadas *set* and *get*
+Son un par de funciones para obtener y retornar un valor que funcionan con las palabras reservadas *set* and *get*
 pero no son llamadas como una función si no como una propiedad más
 
 ### propiedad con nombre computarizada
 
-son las propiedades las cuales su nombre esta creado por medio de un cadenas, siendo posible sumar uno o más de
+Son las propiedades las cuales su nombre esta creado por medio de un cadenas, siendo posible sumar uno o más de
 cadenas 
 
 ``` javascript
@@ -214,10 +230,6 @@ llega a remplazar los mixins de muchos frameworks.
 en objetos literales y clases no hay necesidad de utilizar la palabra reservada *function*, solo se declara los paréntesis
 para los parámetros y las llaves para el cuerpo de la función, esto hace más fácil leer código muy extenso el único problema es
 que esta función no puede hacer recursividad. 
-
-### super
-es una forma de obtener el comportamiento del prototypo que nos esta heredando ya sea una clase o un metodo
-falta
 
 # expresiones regulares
 
@@ -250,8 +262,8 @@ el valor sera lo que se retorne con la palabra clave *yield* (siendo posible ret
 ``` javascript
 function *subeAlRobot(n){
 
-yield `${n} subete al robot`;
-yield `${n} ya subete al robot`;
+    yield `${n} subete al robot`;
+    yield `${n} ya subete al robot`;
 
 }
 
@@ -275,11 +287,32 @@ class claseMadre {}
 class claseHija Extends clasePadre with claseMadre {}
 ```
 
+### super
+es una forma de obtener el comportamiento del prototypo que nos esta heredando ya sea una clase o un metodo
+falta
 
 # lo que viene 
-### funcion asyc 
+### funcion async / await
 
-las funciones asyc son funciones que retornar el resultado de una promesa
-de forma sincrona y sin bloquear el proseso normal del lenguaje 
-se utilizan dos palabras claves una asyn y await 
-async acompaña a la declaracion de la cabecera 
+En las funciones `async` podemos utilizar promesas en una forma asíncrona por medio de la palabra reservada *await* ( en mi opinión esta es la forma ideal de evitar el callback help ), osea no es necesario utilizar `then` ni `catch` simplemente llamas a tu función `promise` y obtienes el valor, esto es azúcar sintáctico ya que esta función retorna una promesa nativa
+
+#### Su sintaxis 
+
+Se utiliza `async` en la cabecera antes de la palabra reservada `function`  y en el bloque de la función se utiliza `await` al momento llamar promesas
+
+``` javascript 
+
+// la promesa
+
+let saludo = Promise.resolve(‘hola mundo cruel’)
+
+async function hola {
+
+let mensaje = await saludo()
+
+return `tengo un nuevo mensaje para ti: ${mensaje}`
+}
+
+hola()
+// tengo un nuevo mensaje para ti:  hola mundo cruel
+```
